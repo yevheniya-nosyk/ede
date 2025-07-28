@@ -1,3 +1,2 @@
 .env
-data/*
-!data/misconfigured_subdomains.txt
+.venv

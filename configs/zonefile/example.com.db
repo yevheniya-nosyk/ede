@@ -1,0 +1,14 @@
+$ORIGIN {{ZONE}}.
+$TTL 600
+@   SOA ns1.{{ZONE}}. hostmaster.{{ZONE}}. (
+    {{SERIAL}} ; serial
+    21600      ; refresh
+    3600       ; retry
+    604800     ; expire
+    86400 )    ; minimum TTL
+
+@       IN  NS      ns1.{{ZONE}}.
+ns1     IN  A       {{NS_IP}}
+@       IN  A       {{A_RECORD}}
+@       IN  AAAA    {{AAAA_RECORD}}
+
