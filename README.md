@@ -2,6 +2,8 @@
 
 This repository contains all the code to set up test subdomains under extended-dns-errors.com. 
 
+If you are looking for the code to reproduce the ACM IMC 2023 paper, you can access it under the `imc-2023` tag [here](https://github.com/yevheniya-nosyk/ede/tree/imc-2023).
+
 ## Prerequisites
 
 Start by copying the `.env-example` configuration file to `.env`, gradually filling it in as we set up the project. The copied file is ignored by Git. 
