@@ -685,7 +685,13 @@ if [ "$CONFIGURE_NAMESERVERS" = "true" ]; then
             'docker load -i ede-bind-9.18.26.tar && \
             mkdir -p bind9/{configs,zones} && \
             mkdir -p bind9/zones/zones-ede && \
-            echo "include \"/etc/bind/configs/named.conf.ede\";" > bind9/configs/named.conf'
+            echo "include \"/etc/bind/configs/named.conf.ede\";" > bind9/configs/named.conf && \
+            echo "options { \
+                dnssec-validation auto; \
+                recursion no; \
+                allow-transfer { none; }; \
+                listen-on-v6 { any; }; \
+            };" >> bind9/configs/named.conf'
     done
     # Delete the local copy of the image
     rm $repo_dir/ede-bind-9.18.26.tar
